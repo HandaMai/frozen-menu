@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FROZEN MENU</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- =========================
+       ヘッダー
+  ========================== -->
+
+  <header class="site-header">
+
+    <h1>FROZEN MENU</h1>
+
+    <p>
+      食べたいものを好きなだけ選んでね
+    </p>
+
+  </header>
+
+
+
+  <!-- =========================
+       絞り込み
+  ========================== -->
+
+  <section class="filters">
+
+
+    <!-- ジャンル -->
+
+    <div class="filter-group">
+
+      <span class="filter-title">
+        ジャンル
+      </span>
+
+      <div class="filter-buttons">
+
+        <button
+          class="filter-button active"
+          data-filter-type="genre"
+          data-value="all">
+          すべて
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="genre"
+          data-value="和食">
+          和食
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="genre"
+          data-value="洋食">
+          洋食
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="genre"
+          data-value="中華">
+          中華
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="genre"
+          data-value="韓国料理">
+          韓国料理
+        </button>
+
+        <button class="filter-button" 
+          data-filter-type="genre" 
+          data-value="その他">
+           その他
+        </button>
+      </div>
+
+    </div>
+
+
+
+    <!-- カテゴリ -->
+
+    <div class="filter-group">
+
+      <span class="filter-title">
+        カテゴリ
+      </span>
+
+      <div class="filter-buttons">
+
+        <button
+          class="filter-button active"
+          data-filter-type="category"
+          data-value="all">
+          すべて
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="category"
+          data-value="メイン">
+          メイン
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="category"
+          data-value="副菜">
+          副菜
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="category"
+          data-value="ごはん・麺">
+          ごはん・麺
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="category"
+          data-value="スープ・汁物">
+          スープ・汁物
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="category"
+          data-value="デザート">
+          デザート
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 味わい -->
+
+    <div class="filter-group">
+
+      <span class="filter-title">
+        味わい
+      </span>
+
+      <div class="filter-buttons">
+
+        <button
+          class="filter-button active"
+          data-filter-type="taste"
+          data-value="all">
+          すべて
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="taste"
+          data-value="こってり">
+          こってり
+        </button>
+
+        <button
+          class="filter-button"
+          data-filter-type="taste"
+          data-value="あっさり">
+          あっさり
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       メニュー一覧
+  ========================== -->
+
+  <main
+    id="menuList"
+    class="menu-list">
+  </main>
+
+
+
+  <!-- =========================
+       ページネーション
+  ========================== -->
+
+  <div
+    id="pagination"
+    class="pagination">
+  </div>
+
+
+
+  <!-- =========================
+       選択結果
+  ========================== -->
+
+  <section class="result">
+
+    <div class="result-box">
+
+      <h2>
+        選んだメニュー
+      </h2>
+
+
+      <ul
+        id="selectedList"
+        class="selected-list">
+
+        <li class="empty">
+          まだ選択されていません
+        </li>
+
+      </ul>
+
+
+      <div class="total-count">
+
+        合計
+        <strong id="totalCount">
+          0
+        </strong>
+        個
+
+      </div>
+
+
+      <button
+        id="copyButton"
+        class="copy-button">
+
+        選んだメニューをコピー
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       フッター
+  ========================== -->
+
+  <footer class="site-info">
+
+    <span>
+      last delivery
+      <strong id="lastDelivery"></strong>
+    </span>
+
+    <span>
+      updated
+      <strong id="siteUpdated"></strong>
+    </span>
+
+  </footer>
+
+
+
+  <!-- =========================
+       JavaScript
+
+       メニューのデータを先に読み込む
+  ========================== -->
+
+  <script src="menus.js"></script>
+
+  <script src="menu.js"></script>
+
+</body>
+
+</html>

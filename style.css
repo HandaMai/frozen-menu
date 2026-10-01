@@ -1,0 +1,1295 @@
+/* =========================================
+   基本
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+
+  background: #f7f2ec;
+  color: #403a36;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   ヘッダー
+========================================= */
+
+.site-header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 55px 20px 35px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: #493f39;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  overflow-wrap: anywhere;
+}
+
+.site-header h1::after {
+  content: " 𓂃 𓈒𓏸";
+  display: block;
+  margin-top: 7px;
+  color: #d3a486;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.site-header p {
+  margin: 13px 0 0;
+  color: #a49489;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   フィルター
+========================================= */
+
+.filters {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 20px 30px;
+}
+
+.filter-group {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+.filter-title {
+  display: block;
+  margin-bottom: 9px;
+  padding-left: 3px;
+  color: #a49489;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
+  gap: 7px;
+}
+
+.filter-button {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+
+  border: 1px solid #e3d5c9;
+  background: #fcfaf7;
+  color: #83766d;
+
+  border-radius: 999px;
+  padding: 8px 15px;
+
+  box-shadow:
+    0 2px 5px rgba(130, 80, 45, 0.04);
+
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.filter-button:hover {
+  transform: translateY(-1px);
+  background: #fffdfb;
+  border-color: #dfbda5;
+  box-shadow:
+    0 3px 8px rgba(130, 80, 45, 0.07);
+}
+
+.filter-button.active {
+  background: #c47f55;
+  color: #fff;
+  border-color: #c47f55;
+  box-shadow:
+    0 3px 8px rgba(150, 85, 45, 0.16);
+}
+
+
+/* =========================================
+   メニュー一覧
+========================================= */
+
+.menu-list {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+
+  margin: 0 auto;
+  padding: 0 20px 30px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(min(250px, 100%), 1fr)
+    );
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   メニューカード
+========================================= */
+
+.menu-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  background: #fcfaf8;
+  border: 1px solid #e5dcd4;
+  border-radius: 18px;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(130, 80, 45, 0.045);
+
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  background: #fffdfb;
+  border-color: #dfc2ad;
+  box-shadow:
+    0 7px 18px rgba(130, 80, 45, 0.09);
+}
+
+
+/* =========================================
+   選択時
+========================================= */
+
+.menu-card.selected {
+  background: #fff3e9;
+  border: 2px solid #d39a72;
+  padding: 19px;
+
+  box-shadow:
+    0 6px 18px rgba(150, 85, 45, 0.13);
+}
+
+.menu-card.selected:hover {
+  background: #fff2e7;
+  border-color: #c98961;
+
+  box-shadow:
+    0 8px 20px rgba(150, 85, 45, 0.16);
+}
+
+
+/* =========================================
+   選択中カードの左アクセント
+========================================= */
+
+.menu-card.selected::before {
+  content: "";
+
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 0;
+
+  width: 4px;
+
+  border-radius: 0 4px 4px 0;
+  background: #e4ab7b;
+}
+
+
+/* =========================================
+   メニュー名
+========================================= */
+
+.menu-name {
+  min-width: 0;
+  max-width: 100%;
+
+  margin-bottom: 9px;
+  padding-right: 30px;
+
+  color: #403a36;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.menu-card.selected .menu-name {
+  color: #5b4438;
+}
+
+
+/* =========================================
+   説明
+========================================= */
+
+.menu-description {
+  min-width: 0;
+  max-width: 100%;
+
+  margin-bottom: 14px;
+
+  color: #95877e;
+
+  font-size: 11px;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.menu-card.selected .menu-description {
+  color: #987b69;
+}
+
+
+/* =========================================
+   タグ
+========================================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  gap: 5px;
+}
+
+.tag {
+  min-width: 0;
+  max-width: 100%;
+
+  padding: 4px 8px;
+
+  border: 1px solid #e2d7cf;
+  border-radius: 999px;
+
+  background: #f6f1ec;
+  color: #917e72;
+
+  font-size: 9px;
+  letter-spacing: 0.04em;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================
+   選択中のタグ
+========================================= */
+
+.menu-card.selected .tag {
+  border-color: #dfc0a9;
+  background: #fbf0e8;
+  color: #a06f50;
+}
+
+
+/* =========================================
+   選択マーク
+========================================= */
+
+.selected-mark {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+
+  width: 24px;
+  height: 24px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #e4ab7b;
+  color: #fff;
+
+  box-shadow:
+    0 2px 6px rgba(130, 70, 35, 0.16);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.menu-card.selected .selected-mark {
+  display: flex;
+}
+
+
+/* =========================================
+   選択中ラベル
+========================================= */
+
+.menu-card.selected::after {
+  content: "選択中";
+
+  position: absolute;
+  top: 15px;
+  right: 45px;
+
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  background: #f3d2bb;
+  color: #df9a73;
+
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   選択時の操作欄
+========================================= */
+
+.selection-options {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  margin-top: 14px;
+  padding-top: 11px;
+
+  border-top: 1px dashed #dfc3af;
+}
+
+
+/* =========================================
+   個数
+========================================= */
+
+.quantity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-width: 0;
+
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.quantity-label {
+  min-width: 0;
+
+  color: #a18170;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.quantity-button {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid #dfc4b1;
+  border-radius: 50%;
+
+  background: #fffaf6;
+  color: #8b624c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 2px 5px rgba(130, 80, 45, 0.05);
+
+  font-size: 12px;
+  line-height: 1;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.quantity-button:hover {
+  background: #f8e9de;
+  border-color: #d29c78;
+  transform: scale(1.05);
+}
+
+.quantity-number {
+  min-width: 17px;
+
+  color: #674c3d;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   メモ
+========================================= */
+
+.memo-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #a18170;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.memo-input {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 28px;
+  margin: 0;
+
+  resize: none;
+
+  border: 1px solid #dfd0c5;
+  border-radius: 8px;
+
+  padding: 5px 7px;
+
+  background: #fcf7f3;
+  color: #604d42;
+
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+
+  overflow: hidden;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.memo-input::placeholder {
+  color: #bba89c;
+}
+
+.memo-input:focus {
+  outline: none;
+
+  border-color: #d09b77;
+  background: #fffdfb;
+}
+
+
+/* =========================================
+   メニューがない場合
+========================================= */
+
+.no-menus {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #aaa09a;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ページネーション
+========================================= */
+
+.pagination {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 20px 42px;
+
+  overflow-x: auto;
+}
+
+.page-button {
+  min-width: 32px;
+  height: 32px;
+
+  flex: 0 0 auto;
+
+  padding: 0 8px;
+
+  border: 1px solid #e0d2c8;
+  border-radius: 10px;
+
+  background: #fcfaf7;
+  color: #927e72;
+
+  box-shadow:
+    0 2px 5px rgba(130, 80, 45, 0.04);
+
+  font-size: 11px;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.page-button:hover:not(:disabled) {
+  background: #fffdfb;
+  border-color: #d9b9a2;
+  transform: translateY(-1px);
+}
+
+.page-button.active {
+  background: #c47f55;
+  border-color: #c47f55;
+  color: #fff;
+
+  box-shadow:
+    0 3px 7px rgba(150, 85, 45, 0.14);
+}
+
+.page-button:disabled {
+  color: #d2c5bd;
+  cursor: default;
+}
+
+
+/* =========================================
+   選択結果
+========================================= */
+
+.result {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.result-box {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  background: #fcfaf8;
+
+  border: 1px solid #e1d6ce;
+  border-radius: 20px;
+
+  padding: 23px;
+
+  box-shadow:
+    0 5px 15px rgba(130, 80, 45, 0.05);
+}
+
+.result-box h2 {
+  margin: 0 0 16px;
+
+  color: #604c41;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================
+   選択結果リスト
+========================================= */
+
+.selected-list {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  list-style: none;
+
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.selected-list li {
+  min-width: 0;
+  max-width: 100%;
+
+  padding: 11px 0;
+
+  border-bottom: 1px dashed #e1d6ce;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   選択中メニュー
+========================================= */
+
+.selected-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   名前・メモ部分
+========================================= */
+
+.selected-item-info {
+  flex: 1 1 auto;
+
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  overflow: hidden;
+}
+
+.selected-item-name {
+  min-width: 0;
+  max-width: 100%;
+
+  color: #604c41;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.selected-item-memo {
+  display: block;
+
+  max-width: 100%;
+
+  margin-top: 2px;
+
+  color: #a28e82;
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================
+   選択結果の操作
+========================================= */
+
+.selected-item-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+
+/* =========================================
+   選択結果の個数
+========================================= */
+
+.selected-quantity-control {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  flex: 0 0 auto;
+}
+
+.selected-quantity-button {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid #dfc5b2;
+  border-radius: 50%;
+
+  background: #fffaf6;
+  color: #8b624c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 2px 5px rgba(130, 80, 45, 0.04);
+
+  font-size: 14px;
+  line-height: 1;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.selected-quantity-button:hover {
+  background: #f7e9df;
+  border-color: #d29c78;
+  transform: scale(1.05);
+}
+
+.selected-quantity-number {
+  min-width: 19px;
+
+  color: #674c3d;
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   削除ボタン
+========================================= */
+
+.selected-delete-button {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid #dfd4cc;
+  border-radius: 50%;
+
+  background: #f7f1ed;
+  color: #a18f85;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.selected-delete-button:hover {
+  background: #eee0d8;
+  border-color: #d0b7a8;
+  color: #765444;
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   選択結果が空の場合
+========================================= */
+
+.selected-list .empty {
+  color: #aaa09a;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+/* =========================================
+   合計
+========================================= */
+
+.total-count {
+  margin-bottom: 15px;
+  padding-top: 2px;
+
+  text-align: right;
+
+  color: #a28e82;
+  font-size: 11px;
+}
+
+.total-count strong {
+  color: #604c41;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   コピー
+========================================= */
+
+.copy-button {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 14px;
+
+  background: #c47f55;
+  color: #fff;
+
+  box-shadow:
+    0 4px 10px rgba(150, 85, 45, 0.16);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+
+.copy-button:hover {
+  background: #b66f48;
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 14px rgba(150, 85, 45, 0.19);
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   フッター
+========================================= */
+
+.site-info {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 10px 20px 35px;
+
+  text-align: center;
+
+  color: #b0a39d;
+
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.site-info span + span {
+  margin-left: 15px;
+}
+
+.site-info strong {
+  color: #927e72;
+  font-weight: normal;
+}
+
+
+/* =========================================
+   スマホ
+   iPhone 16 / 16 Pro / Plus / Pro Max
+   およびそれ以降のスマホを自動対応
+========================================= */
+
+@media (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+      35px
+      16px
+      28px;
+  }
+
+  .site-header h1 {
+    font-size: clamp(22px, 6.5vw, 25px);
+    letter-spacing: 0.13em;
+  }
+
+  .site-header p {
+    max-width: 100%;
+    font-size: 11px;
+  }
+
+
+  /* フィルター */
+
+  .filters {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .filter-button {
+    max-width: 100%;
+    padding: 8px 13px;
+
+    font-size: 11px;
+  }
+
+
+  /* メニュー */
+
+  .menu-list {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 13px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .menu-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .menu-card:hover {
+    transform: none;
+  }
+
+  .menu-card.selected {
+    padding: 19px;
+  }
+
+  .menu-name,
+  .menu-description {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* 選択操作 */
+
+  .selection-options {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .memo-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* ページネーション */
+
+  .pagination {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 30px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .pagination::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* 結果 */
+
+  .result {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .result-box {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 18px;
+  }
+
+  .selected-item {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .selected-item-info {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+  }
+
+  .selected-item-name {
+    font-size: 12px;
+  }
+
+  .selected-item-actions {
+    gap: 6px;
+  }
+
+  .selected-quantity-control {
+    gap: 5px;
+  }
+
+  .selected-quantity-button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .selected-delete-button {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+
+  .copy-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* フッター */
+
+  .site-info {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-info span {
+    display: block;
+  }
+
+  .site-info span + span {
+    margin: 5px 0 0;
+  }
+}
+
+
+/* =========================================
+   とても小さいスマホ
+========================================= */
+
+@media (max-width: 360px) {
+
+  .site-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header h1 {
+    font-size: 21px;
+    letter-spacing: 0.1em;
+  }
+
+  .site-header p {
+    font-size: 10px;
+  }
+
+  .filters,
+  .menu-list,
+  .result,
+  .pagination {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .filter-button {
+    padding: 7px 11px;
+    font-size: 10px;
+  }
+
+  .menu-card {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .menu-card.selected {
+    padding: 16px;
+  }
+
+  .selected-mark {
+    right: 11px;
+  }
+
+  .menu-card.selected::after {
+    right: 41px;
+  }
+
+  .result-box {
+    padding: 15px;
+  }
+
+  .selected-item {
+    gap: 6px;
+  }
+
+  .selected-item-actions {
+    gap: 4px;
+  }
+
+  .selected-quantity-button,
+  .selected-delete-button {
+    width: 25px;
+    height: 25px;
+  }
+}
